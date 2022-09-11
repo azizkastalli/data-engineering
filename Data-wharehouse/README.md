@@ -24,7 +24,7 @@ The dimension tables are as follows:
     ├── create_tables.py          # Manages the tables creation in redshift database.
     ├── etl.py                    # Manages the ETL process in redshift database.
     ├── sql_queries.py            # Contains all necessary SQL queries to drop, create tables and process the ETL process.
-    ├── dwh.cfg                   # contains the s3 buckets links, the redshift cluster credentials and the IAM role, all necessary to make the connections to redshift and s3 buckets. 
+    ├── dwh.cfg                   # Contains all necessary credentials to connect to redshift and s3 buckets. 
     └── README.md
 ```
     
