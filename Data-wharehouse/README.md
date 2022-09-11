@@ -9,7 +9,7 @@ The data that resides in S3 contains JSON logs on user activity on the app, as w
 ## Project Content and Structure
 ### 1. ERD
 
-![image](https://drive.google.com/uc?export=view&id=1M5xNIgHgMI10vFy1Yl5WaM49qOWFC61u | width=100)
+![image](https://drive.google.com/uc?export=view&id=1M5xNIgHgMI10vFy1Yl5WaM49qOWFC61u)
 
 This data warehouse follows a star schema design such as <b>songplay</b> is the fact table. 
 The dimension tables are as follows:
@@ -19,12 +19,13 @@ The dimension tables are as follows:
 * <b>time:</b> contains information about the events time.
 
 ### 2. Project Structure
+```
 .
 +-- _create_tables.py
 +-- _etl.py
 +-- _sql_queries.py
 +-- _dwh.cfg
-
+```
 * <b>create_tables.py:</b> This module manages the tables creation in redshift database.
 * <b>etl.py:</b> This module manages the ETL process in redshift database.
 * <b>sql_queries.py:</b> This module contains all necessary SQL queries to drop, create tables and process the ETL process.
