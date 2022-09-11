@@ -1,6 +1,6 @@
 ## Introduction
-The main goal of this project is to move the processes and data of a music streaming app (sparkify) onto the cloud.
-During this project I designed a data-warehouse following the star schema to store the data which will be used for analytics.
+The main goal of this project is to move the processes and data of a music streaming app (sparkify) onto the cloud.<br>
+During this project I designed a data-warehouse following the star schema to store the data which will be used for analytics.<br>
 Furthermore, I built an ETL pipeline that extracts their data from S3 buckets and stages them in Redshift, then transformed and load it 
 into the fact and dimension tables.<br>
 The data that resides in S3 contains JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
