@@ -20,16 +20,13 @@ The dimension tables are as follows:
 
 ### 2. Project Structure
 ```
-.
-+-- _create_tables.py
-+-- _etl.py
-+-- _sql_queries.py
-+-- _dwh.cfg
+    .
+    ├── create_tables.py          # Manages the tables creation in redshift database.
+    ├── etl.py                    # Manages the ETL process in redshift database.
+    ├── sql_queries.py            # Contains all necessary SQL queries to drop, create tables and process the ETL process.
+    ├── dwh.cfg                   # contains the s3 buckets links, the redshift cluster credentials and the IAM role, all necessary to make the connections to redshift and s3 buckets. 
+    └── README.md
 ```
-* <b>create_tables.py:</b> This module manages the tables creation in redshift database.
-* <b>etl.py:</b> This module manages the ETL process in redshift database.
-* <b>sql_queries.py:</b> This module contains all necessary SQL queries to drop, create tables and process the ETL process.
-* <b>dwh.cfg:</b> This module contains the s3 buckets links, the redshift cluster credentials and the IAM role, all necessary to make the connections to redshift and s3 buckets. 
     
 ### 3. How to Run the Python Scripts
 
