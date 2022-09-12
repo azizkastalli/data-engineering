@@ -7,19 +7,27 @@ In this project, I created an ETL pipeline that uses Python and SQL to transfer 
 ![image](https://drive.google.com/uc?export=view&id=1iAyWEerDMGACxomATLrsdvoSY843A6M0)
 
 ### Project's structure:
-1. <b>create_tables.py</b>: a python module used to create all necessary tables for the sparkify app.
-2. <b>etl.py</b>: a python module used to process the meta-data stored in the data folder and populate the databse.
-3. <b>sql_queries.py</b>: a python module containing all necessary sql queries used to create, drop and insert into tables.
-4. <b>etl.ipynb</b>: a jupyter notebook used for implementing and cheking the functions used to process the meta-data files.
-5. <b>test.ipynb</b>: a jupyter notebook used for sanity check tests.
-6. <b>data</b>: a folder that contains all the song and log meta-data in json format.
+```
+    .
+    ├── create_tables.py          # Creates all necessary tables for the sparkify app.
+    ├── etl.py                    # Processes the meta-data stored in the data folder and populate the databse.
+    ├── sql_queries.py            # Contains all necessary sql queries used to create, drop and insert into tables.
+    ├── etl.ipynb                 # Implements and checks the functions used to process the meta-data files. 
+    ├── test.ipynb                # Sanity check tests notebook. 
+    ├── data                      # Contains all the song and log meta-data in json format. 
+    └── README.md
+```
 
 ### How to run the Python scripts
 First, run the module create_tables.py following this command:<br>
-* python create_tables.py<br>
+```
+python create_tables.py
+```
 This module will drop existing tables from the database, then creates the tables needed for the sparkify app 
 as well as their relationships.
 
 Next, run the module etl.py following this command:<br>
-* python etl.py<br>
+```
+python etl.py
+```
 This modlule will process song and log json files and populate the databse.
