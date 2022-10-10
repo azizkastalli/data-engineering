@@ -6,11 +6,11 @@ Also, I have to run tests against their datasets after the ETL steps have been e
 The source data resides in S3 and needs to be processed in Sparkify's data warehouse in Amazon Redshift. The source datasets consist of JSON logs that tell about user activity in the application and JSON metadata about the songs the users listen to.
 
 During this project, I developped a data pipeline that executes the following steps:<br>
-    1. Create the data-model (if it does not exist) on redshift
-    2. Stage the data from s3 buckets to redshift (data extraction).
-    3. Transform the data into the appropriate data-model (data transformation)
-    4. Load the data into redshift using hooks and custom operators (data loading)
-    5. Check the data quality by running serveral tests.
+1. Create the data-model (if it does not exist) on redshift
+2. Stage the data from s3 buckets to redshift (data extraction).
+3. Transform the data into the appropriate data-model (data transformation)
+4. Load the data into redshift using hooks and custom operators (data loading)
+5. Check the data quality by running serveral tests.
 
 
 ## Project Content and Structure
@@ -37,7 +37,7 @@ The dimension tables are as follows:
     |   |   ├── data_quality.py  #executes data quality checks.
     |   |   ├── load_dimensions.py  #loads data into dimension tables.
     |   |   ├── load_fact.py  #loads data into the fact table.
-    |   |   └── stage_redshift.py  #stage data from s3 to redshift (data extraction).
+    |   |   └── stage_redshift.py  #stages data from s3 to redshift (data extraction).
     ├── create_tables.sql  #SQL queries to create dimension and fact tables (data-model)         
     ├── dataquality_check.json   #JSON script for data quality checks.
     └── README.md
@@ -58,13 +58,12 @@ Here are the s3 links (buckets located in us-west-2 region):
 * Song data: s3://udacity-dend/song_data
 
 #### 3.2 Run the application:
-First, execute the command
+First, execute this command to run the apache airflow server
 ``` 
 /opt/airflow/start.sh 
 ```
-This command will run the apache airflow server.
 
-Second, access the server via your browser and run the dag.
+Second, access the server via your browser to check and run the dag.
 
 ### 4. DAG
 ![image](https://drive.google.com/uc?export=view&id=1RQxeY-GkPzqXmym7Cd7SoSfhnIDdVb5D)
