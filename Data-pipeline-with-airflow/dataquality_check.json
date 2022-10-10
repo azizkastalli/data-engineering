@@ -1,0 +1,19 @@
+{
+    "dq_checks":[
+        {"check_sql": "SELECT count(*) FROM users WHERE (userid is null) or (first_name is null) or (last_name is null)",
+         "expected_result": 0,
+         "description": "check users table null values"},
+        {"check_sql": "SELECT count(*) FROM artists WHERE (artistid is null) or (name is null)",
+         "expected_result": 0,
+         "description": "check artists table null values"},
+        {"check_sql": "SELECT count(*) FROM songs WHERE (songid is null) or (title is null) or (artistid is null)",
+         "expected_result": 0,
+         "description": "check songs table null values"},
+        {"check_sql": "SELECT count(*) FROM time WHERE (start_time is null)",
+         "expected_result": 0,
+        "description": "check time table null values"},
+        {"check_sql": "SELECT count(*) FROM songplays WHERE (playid is null) or (start_time is null) or (userid is null) or (songid is null) or (artistid is null)",
+         "expected_result": 0,
+         "description": "check songplays table null values"}
+    ]
+}
