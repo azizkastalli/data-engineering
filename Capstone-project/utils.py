@@ -1,4 +1,4 @@
-from pyspark.sql.functions import udf, expr, col, to_date, lower, upper, count, when, isnan, lit
+from pyspark.sql.functions import udf, expr, col, to_date, lower, upper, count, when, isnan, lit, round
 from pyspark.sql.types import IntegerType, FloatType, DoubleType, StringType, DateType
 from pyspark.sql import SparkSession
 import re
@@ -51,7 +51,7 @@ def dataExplorationCleanining(spark_data, data_label, duplicates_fields=None, sh
 
     #drop columns with nans values more than a threshold
     percent_missing = spark_data.select([
-        (count(when(isnan(c) | col(c).isNull(), c))/count(lit(1))).alias(c) 
+        round((count(when(isnan(c) | col(c).isNull(), c))/count(lit(1))), 4).alias(c) 
         for c in spark_data.columns
     ])
     precent_missing_list = percent_missing.collect()
@@ -171,3 +171,46 @@ def convertSaS_toDate(sas_date):
     return (
         pd.to_timedelta(sas_date, unit='D') + pd.Timestamp('1960-1-1')
     ).date()
+
+
+def unique_key_check(spark_data, spark_data_label, key):
+    """
+    Checks if a key is unique or not by printing a message.
+    ---
+    
+    args:
+        spark_data(Spark.DataFrame): spark dataframe representing a fact or dimension table.
+        spark_data_label(string): the dataframe label.
+        key(string): the unique key field.
+    
+    returns:
+        None.
+    """
+    
+    if spark_data.count() - spark_data.select(key).distinct().count() == 0:
+        print(f'{spark_data_label}: unique primary key test passed')
+    else:
+        print(f'{spark_data_label}: unique primary key test failed!')
+        
+        
+def check_missing_values(spark_data, spark_data_label, subset):
+    """
+    Counts the missing values of a spark data frame primary/foreign keys
+    and prints a message to indicate if the test passed or not.
+    ---
+    
+    args:
+        spark_data(Spark.DataFrame): spark dataframe representing a fact or dimension table.
+        spark_data_label(string): the dataframe label.
+        subset(list): a list of one or multiple column names.
+    
+    returns:
+        None.
+    """
+    print(f'{spark_data_label} keys missing values test passed.'
+    if spark_data.select([
+        (count(when(col(c).isNull(), c))/count(lit(1))).alias(c) 
+        for c in subset
+    ]).toPandas().sum().sum() == 0 else 
+    f'{spark_data_label}: keys missing values test failed!'
+    )
