@@ -6,14 +6,13 @@ simple relational data-models until data warehouse architectures, data-lakes and
  
 ### Projects
 #### 1. Data Modeling with Postgres
-During this project, I modelled user activity data to create a database and ETL pipeline in Postgres for a music streaming app.<br>
+During this project, I modelled user activity data to create a database and ETL pipeline in Postgres for a music streaming app.
 Also, I defined Fact and Dimension tables and inserted data into new tables.
  
 * Tools and Technologies: <b>Python</b>, <b>Pandas</b>, <b>Postgres</b>, <b>SQL</b>.
  
 #### 2. Data Modeling with Apache Cassandra
-During this project, I modelled an event data to create a non-relational database and ETL pipeline for a music streaming app.<br>
-Also, I defined queries and tables for a database built using Apache Cassandra.
+During this project, I modelled an event data to create a non-relational database and ETL pipeline for a music streaming app. Also, I defined queries and tables for a database built using Apache Cassandra.
  
 * Tools and Technologies: <b>Python</b>, <b>Pandas</b>, <b>CQL</b>, <b>Apache Cassandra</b>.
  
