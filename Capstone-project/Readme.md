@@ -17,7 +17,7 @@ Our data is derived from 3 sources or files as follows:
 
 
 ### 2. Data Model
-![image](https://drive.google.com/uc?export=view&id=1krP58ZqA2qFRXoXVvoxK-s8Cc18YBDO7)
+![image](https://drive.google.com/uc?export=view&id=1Yyu6yaTCt0GJzZ3TMzpZ0bAi9T8377Sm)
 
 The data model is a star schema model. It consists of 3 dimension tables:<br>
 - dim_cities_airport: contains airport information aggregated by cities.
